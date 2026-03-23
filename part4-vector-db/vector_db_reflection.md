@@ -6,6 +6,6 @@ A traditional keyword-based search would not suffice for a law firm wanting to q
 
 This is solved by vector databases. A vector database works by converting both the contract text and the lawyer's query into high-dimensional numerical vectors — called embeddings — using a language model. These embeddings capture the *semantic meaning* of the text, not just the words. Two sentences that mean the same thing will have embeddings that are close together in vector space, even if they share no common words. A similarity search then retrieves the passages whose embeddings are closest to the query embedding.
 
-In this system, the workflow would be: split each contract into chunks (paragraphs or sections), generate an embedding for each chunk using a model like `all-MiniLM-L6-v2`, and store these embeddings in a vector database such as Pinecone or ChromaDB. When a lawyer submits a plain-English query, the system embeds the query and retrieves the top matching contract sections by cosine similarity.
+In this system, the workflow would be: split each contract into chunks (paragraphs or sections), generate an embedding for each chunk, and store these embeddings in a vector database. When a lawyer submits a plain-English query, the system embeds the query and retrieves the top matching contract sections by cosine similarity.
 
 The vector database plays the role of a semantic index — enabling fast, meaning-aware retrieval across hundreds of pages that would be impossible with keyword search alone.
